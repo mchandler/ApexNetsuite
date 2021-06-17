@@ -1,6 +1,6 @@
 # ApexNetsuite
 
-This is a simple class that signs your HttpRequest callouts to Netsuite restlet services with the proper OAuth 1.0 credentials.
+This is a simple class that signs your HttpRequest callouts from Salesforce to Netsuite restlet services with the proper OAuth 1.0 credentials.
 
 ## Implementation
 
