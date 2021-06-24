@@ -1,18 +1,25 @@
 global class NetsuiteSigningService {
 
-    private Netsuite_OAuth__c service = Netsuite_OAuth__c.getOrgDefaults();
-    private String token = service.Token_Id__c;
-    private String tokenSecret = service.Token_Secret__c;
-    private String realm = service.Realm__c;
+    private String token;
+    private String tokenSecret;
+    private String realm;
     private String verifier;
 
     private String nonce;
     private String timestamp;
     private String signature;
-    private String consumerKey = service.Consumer_Key__c;
-    private String consumerSecret = service.Consumer_Secret__c;
+    private String consumerKey;
+    private String consumerSecret;
 
     private Map<String,String> parameters = new Map<String,String>();
+
+    public NetsuiteSigningService(String token, String tokenSecret, String realm, String consumerKey, String consumerSecret) {
+        this.token = token;
+        this.tokenSecret = tokenSecret;
+        this.realm = realm;
+        this.consumerKey = consumerKey;
+        this.consumerSecret = consumerSecret;
+    }
 
     private void refreshParameters() {
         parameters.clear();
